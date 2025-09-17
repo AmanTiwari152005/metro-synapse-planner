@@ -18,7 +18,7 @@ interface UploadedFiles {
   stabling: File | null;
 }
 
-// Mock data for demonstration
+// Mock data for demonstration - All 25 trains
 const mockResults = [
   { trainId: 'T001', status: 'inducted' as const, reason: 'All systems operational', score: 95 },
   { trainId: 'T002', status: 'hold' as const, reason: 'Awaiting cleaning slot', score: 82 },
@@ -26,21 +26,33 @@ const mockResults = [
   { trainId: 'T004', status: 'inducted' as const, reason: 'Ready for service', score: 91 },
   { trainId: 'T005', status: 'hold' as const, reason: 'Fitness certificate expires in 3 days', score: 75 },
   { trainId: 'T006', status: 'inducted' as const, reason: 'All checks passed', score: 88 },
+  { trainId: 'T007', status: 'inducted' as const, reason: 'All systems operational', score: 93 },
+  { trainId: 'T008', status: 'maintenance' as const, reason: 'Job card open - Door System', score: 42 },
+  { trainId: 'T009', status: 'hold' as const, reason: 'Cleaning slot unavailable', score: 78 },
+  { trainId: 'T010', status: 'inducted' as const, reason: 'Ready for service', score: 89 },
+  { trainId: 'T011', status: 'maintenance' as const, reason: 'Job card open - AC System', score: 38 },
+  { trainId: 'T012', status: 'inducted' as const, reason: 'All checks passed', score: 92 },
+  { trainId: 'T013', status: 'hold' as const, reason: 'Awaiting fitness verification', score: 73 },
+  { trainId: 'T014', status: 'inducted' as const, reason: 'All systems operational', score: 87 },
+  { trainId: 'T015', status: 'maintenance' as const, reason: 'Job card open - Traction Motor', score: 35 },
+  { trainId: 'T016', status: 'inducted' as const, reason: 'Ready for service', score: 90 },
+  { trainId: 'T017', status: 'hold' as const, reason: 'Branding work pending', score: 76 },
+  { trainId: 'T018', status: 'inducted' as const, reason: 'All checks passed', score: 94 },
+  { trainId: 'T019', status: 'maintenance' as const, reason: 'Job card open - Pantograph', score: 41 },
+  { trainId: 'T020', status: 'inducted' as const, reason: 'All systems operational', score: 86 },
+  { trainId: 'T021', status: 'hold' as const, reason: 'Mileage inspection due', score: 79 },
+  { trainId: 'T022', status: 'inducted' as const, reason: 'Ready for service', score: 85 },
+  { trainId: 'T023', status: 'maintenance' as const, reason: 'Job card open - Compressor', score: 39 },
+  { trainId: 'T024', status: 'hold' as const, reason: 'Awaiting stabling position', score: 77 },
+  { trainId: 'T025', status: 'inducted' as const, reason: 'All checks passed', score: 96 },
 ];
 
 const mockChartData = {
-  trainScores: [
-    { trainId: 'T001', score: 95 },
-    { trainId: 'T002', score: 82 },
-    { trainId: 'T003', score: 45 },
-    { trainId: 'T004', score: 91 },
-    { trainId: 'T005', score: 75 },
-    { trainId: 'T006', score: 88 },
-  ],
+  trainScores: mockResults.map(train => ({ trainId: train.trainId, score: train.score })),
   statusBreakdown: [
-    { status: 'Inducted', count: 3, color: 'hsl(var(--success))' },
-    { status: 'Hold', count: 2, color: 'hsl(var(--warning))' },
-    { status: 'Maintenance', count: 1, color: 'hsl(var(--destructive))' },
+    { status: 'Inducted', count: mockResults.filter(t => t.status === 'inducted').length, color: 'hsl(var(--success))' },
+    { status: 'Hold', count: mockResults.filter(t => t.status === 'hold').length, color: 'hsl(var(--warning))' },
+    { status: 'Maintenance', count: mockResults.filter(t => t.status === 'maintenance').length, color: 'hsl(var(--destructive))' },
   ],
   brandingProgress: [
     { trainId: 'T001', completion: 100 },

@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-    /* Metro Theme Colors */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    /* Metro Theme Colors - Dark/Light Combination */
+    --background: 215 28% 12%;
+    --foreground: 210 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 215 28% 15%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 215 28% 15%;
+    --popover-foreground: 210 20% 95%;
 
     /* Metro Blue Primary */
     --primary: 221 83% 35%;
@@ -32,21 +32,21 @@
     --warning-glow: 43 96% 58%;
 
     /* Metro Grey Secondary */
-    --secondary: 220 13% 95%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 95%;
 
-    --muted: 220 13% 91%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 215 25% 20%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 221 83% 94%;
-    --accent-foreground: 221 83% 35%;
+    --accent: 215 25% 22%;
+    --accent-foreground: 221 83% 55%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 88%;
-    --input: 220 13% 91%;
-    --ring: 221 83% 35%;
+    --border: 215 25% 25%;
+    --input: 215 25% 18%;
+    --ring: 221 83% 55%;
 
     /* Metro Gradients */
     --gradient-metro: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
