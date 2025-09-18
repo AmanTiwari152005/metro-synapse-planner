@@ -138,6 +138,11 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Roboto', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
   }
 }
 
@@ -237,5 +242,31 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@layer utilities {
+  /* Auth Page Styles */
+  .auth-input {
+    @apply bg-white/10 border-white/20 text-white placeholder:text-blue-300 focus:border-primary focus:ring-primary/50 backdrop-blur-sm;
+  }
+  
+  .auth-button {
+    @apply bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  /* Enhanced animations */
+  @keyframes train-move {
+    0% { transform: translateX(-20px); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(-20px); }
+  }
+  
+  .animate-train {
+    animation: train-move 3s ease-in-out infinite;
   }
 }

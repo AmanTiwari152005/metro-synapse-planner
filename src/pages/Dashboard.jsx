@@ -129,7 +129,21 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Logout Button */}
+      <div className="absolute top-4 right-4 z-10">
+        <Button
+          variant="outline"
+          onClick={() => {
+            localStorage.removeItem('metrosynapse_auth');
+            window.location.reload();
+          }}
+          className="glass-card border-white/20 text-white hover:bg-white/10"
+        >
+          Logout
+        </Button>
+      </div>
+
       {/* Header */}
       <header className="bg-gradient-to-r from-primary via-primary-glow to-success text-white shadow-lg">
         <div className="container mx-auto px-6 py-8">

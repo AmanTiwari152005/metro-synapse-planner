@@ -12,8 +12,12 @@ export default {
         "2xl": "1400px",
       },
     },
-    extend: {
-      colors: {
+  extend: {
+    fontFamily: {
+      'sans': ['Roboto', 'system-ui', 'sans-serif'],
+      'poppins': ['Poppins', 'system-ui', 'sans-serif'],
+    },
+    colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
