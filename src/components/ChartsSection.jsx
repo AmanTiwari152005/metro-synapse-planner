@@ -3,12 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart, Pie, Cell, Tooltip } from 'recharts';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 
-interface ChartsData {
-  trainScores: Array<{ trainId: string; score: number }>;
-  statusBreakdown: Array<{ status: string; count: number; color: string }>;
-  brandingProgress: Array<{ trainId: string; completion: number }>;
-}
-
 const chartConfig = {
   score: {
     label: "Score",
@@ -20,7 +14,7 @@ const chartConfig = {
   },
 };
 
-export function ChartsSection({ trainScores, statusBreakdown, brandingProgress }: ChartsData) {
+export function ChartsSection({ trainScores, statusBreakdown, brandingProgress }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Score Distribution Bar Chart */}
@@ -79,7 +73,7 @@ export function ChartsSection({ trainScores, statusBreakdown, brandingProgress }
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="count"
-                  label={({ status, percent }: any) => `${status} (${((percent || 0) * 100).toFixed(0)}%)`}
+                  label={({ status, percent }) => `${status} (${((percent || 0) * 100).toFixed(0)}%)`}
                 >
                   {statusBreakdown.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />

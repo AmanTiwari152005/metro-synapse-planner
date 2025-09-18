@@ -3,30 +3,22 @@ import { Upload, Check, X, FileText } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
-interface FileUploaderProps {
-  title: string;
-  description: string;
-  onFileSelect: (file: File) => void;
-  isUploaded: boolean;
-  fileName?: string;
-}
-
-export function FileUploader({ title, description, onFileSelect, isUploaded, fileName }: FileUploaderProps) {
+export function FileUploader({ title, description, onFileSelect, isUploaded, fileName }) {
   const [isDragOver, setIsDragOver] = useState(false);
 
-  const handleDragOver = useCallback((e: React.DragEvent) => {
+  const handleDragOver = useCallback((e) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragOver(true);
   }, []);
 
-  const handleDragLeave = useCallback((e: React.DragEvent) => {
+  const handleDragLeave = useCallback((e) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragOver(false);
   }, []);
 
-  const handleDrop = useCallback((e: React.DragEvent) => {
+  const handleDrop = useCallback((e) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragOver(false);
@@ -40,7 +32,7 @@ export function FileUploader({ title, description, onFileSelect, isUploaded, fil
     }
   }, [onFileSelect]);
 
-  const handleFileInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileInputChange = useCallback((e) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];

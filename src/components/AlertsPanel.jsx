@@ -3,39 +3,28 @@ import { AlertTriangle, Info, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-interface Alert {
-  id: string;
-  type: 'warning' | 'error' | 'info';
-  message: string;
-  trainId?: string;
-}
-
-interface AlertsPanelProps {
-  alerts: Alert[];
-}
-
 const alertConfig = {
   warning: { 
     icon: AlertTriangle, 
-    variant: 'warning' as const, 
+    variant: 'warning', 
     bgClass: 'bg-warning/10 border-warning/20',
     textClass: 'text-warning-foreground'
   },
   error: { 
     icon: AlertTriangle, 
-    variant: 'maintenance' as const, 
+    variant: 'maintenance', 
     bgClass: 'bg-destructive/10 border-destructive/20',
     textClass: 'text-destructive-foreground'
   },
   info: { 
     icon: Info, 
-    variant: 'default' as const, 
+    variant: 'default', 
     bgClass: 'bg-primary/10 border-primary/20',
     textClass: 'text-primary-foreground'
   }
 };
 
-export function AlertsPanel({ alerts }: AlertsPanelProps) {
+export function AlertsPanel({ alerts }) {
   if (alerts.length === 0) {
     return (
       <Card className="animate-slide-up">

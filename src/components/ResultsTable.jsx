@@ -3,24 +3,13 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
-interface TrainResult {
-  trainId: string;
-  status: 'inducted' | 'hold' | 'maintenance';
-  reason: string;
-  score: number;
-}
-
-interface ResultsTableProps {
-  results: TrainResult[];
-}
-
 const statusConfig = {
-  inducted: { variant: 'inducted' as const, icon: '✅', label: 'Inducted' },
-  hold: { variant: 'hold' as const, icon: '🟡', label: 'Hold' },
-  maintenance: { variant: 'maintenance' as const, icon: '❌', label: 'Maintenance' }
+  inducted: { variant: 'inducted', icon: '✅', label: 'Inducted' },
+  hold: { variant: 'hold', icon: '🟡', label: 'Hold' },
+  maintenance: { variant: 'maintenance', icon: '❌', label: 'Maintenance' }
 };
 
-export function ResultsTable({ results }: ResultsTableProps) {
+export function ResultsTable({ results }) {
   return (
     <Card className="animate-slide-up">
       <CardHeader>
